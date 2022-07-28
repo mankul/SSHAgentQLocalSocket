@@ -1,6 +1,5 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
-#include <localsocketserver.h>
 #include <localclientsocket.h>
 #include <clientsessions.h>
 #include <QQuickView>

@@ -4,7 +4,7 @@
 #include<qobject.h>
 #include<qlocalsocket.h>
 #include<localclientsocket.h>
-
+#include "sshserverimage.h"
 class ClientSessions: public QObject
 {
     Q_OBJECT
@@ -18,8 +18,11 @@ public:
     LocalClientSocket *localClientSocket() const;
 
     Q_INVOKABLE void fetchAddedIdentities();
+
 private:
     LocalClientSocket * client;
+    void contactServer();
+    SshServerImage * sshServerImage;
 };
 
 

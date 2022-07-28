@@ -7,7 +7,8 @@ QT += quick
 SOURCES += \
         clientsessions.cpp \
         localclientsocket.cpp \
-        main.cpp
+        main.cpp \
+        sshserverimage.cpp
 
 RESOURCES += qml.qrc
 
@@ -24,4 +25,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     clientsessions.h \
-    localclientsocket.h
+    localclientsocket.h \
+    sshserverimage.h

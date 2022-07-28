@@ -3,6 +3,10 @@
 ClientSessions::ClientSessions()
 {
     qDebug()<<Q_FUNC_INFO;
+    sshServerImage = new SshServerImage();
+    sshServerImage->setServerName();
+    qDebug()<<"server path is "<<sshServerImage->serverPath;
+
 }
 
 void ClientSessions::createNewClientSocket(){
@@ -13,13 +17,17 @@ void ClientSessions::createNewClientSocket(){
 
 void ClientSessions::connectClientToServer(){
     qDebug()<<Q_FUNC_INFO<<"new client looking for connection to server";
-    client->connectToServer();
+    client->connectToServer(sshServerImage->serverPath);
 }
 
 
 void ClientSessions::fetchAddedIdentities(){
     qDebug()<<Q_FUNC_INFO;
     client->getAllIdentities();
+}
+
+void ClientSessions::contactServer(){
+
 }
 
 
